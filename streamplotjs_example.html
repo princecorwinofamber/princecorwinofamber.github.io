@@ -12,29 +12,29 @@
     <table border="1">
         <tr>
             <th>
-                Система
+                ODE system
             </th>
             <th>
-                Фазовый портрет
+                Phase portrait
             </th>
             <th>
-                Особые точки
+                Equilibrium points
             </th>
             <th>
-                Кнопка переключения
+                Click mode
                 <br>
-                режима мыши
+                switch
             </th>
             <th>
-                Линеаризация
+                Linearized ODE system
             </th>
             <th>
-                Фазовый портрет линеаризации
+                Phase portrait of the linearized ODE system
             </th>
         </tr>
         <tr>
             <th>
-                Модель Лотки—Вольтерры
+                Lotka–Volterra equations
                 <br>
                 <img id="ode1x" src=""/>
                 <br>
@@ -60,7 +60,7 @@
         </tr>
         <tr>
             <th>
-                Математический маятник
+                Pendulum
                 <br>
                 <img id="ode2x" src=""/>
                 <br>
@@ -86,7 +86,7 @@
         </tr>
         <tr>
             <th>
-                Бифуркация Андронова — Хопфа
+                Hopf bifurcation
                 <br>
                 <img id="ode3x" src=""/>
                 <br>
@@ -119,31 +119,31 @@
         var streamplotobj1 = new streamplotjs.Streamplot(lotka, undefined, undefined, undefined, undefined, undefined, undefined, "canvas1");
         streamplotobj1.set_equilibrium_points_output("legend1");
         streamplotobj1.draw();
-        document.getElementById("ode1x").src = "https://latex.codecogs.com/gif.latex?\\dot&space;x&space;=&space;".concat(streamplotobj1.f._f.latex().replace("(", "\\(").replace(" ", "&space;"));
-        document.getElementById("ode1y").src = "https://latex.codecogs.com/gif.latex?\\dot&space;y&space;=&space;".concat(streamplotobj1.f._g.latex().replace("(", "\\(").replace(" ", "&space;"));
+        document.getElementById("ode1x").src = "https://latex.codecogs.com/gif.latex?\\dot&space;x&space;=&space;".concat(streamplotobj1.f.latex()[0].replace("(", "\\(").replace(" ", "&space;"));
+        document.getElementById("ode1y").src = "https://latex.codecogs.com/gif.latex?\\dot&space;y&space;=&space;".concat(streamplotobj1.f.latex()[1].replace("(", "\\(").replace(" ", "&space;"));
         var lin1 = new streamplotjs.Streamplot(lotka.linearized(1, 1), undefined, undefined, undefined, undefined, undefined, undefined, "lcanvas1");
         lin1.draw();
-        document.getElementById("lin1x").src = "https://latex.codecogs.com/gif.latex?\\dot&space;x&space;=&space;".concat(lin1.f._f.latex().replace("(", "\\(").replace(" ", "&space;"));
-        document.getElementById("lin1y").src = "https://latex.codecogs.com/gif.latex?\\dot&space;y&space;=&space;".concat(lin1.f._g.latex().replace("(", "\\(").replace(" ", "&space;"));
+        document.getElementById("lin1x").src = "https://latex.codecogs.com/gif.latex?\\dot&space;x&space;=&space;".concat(lin1.f.latex()[0].replace("(", "\\(").replace(" ", "&space;"));
+        document.getElementById("lin1y").src = "https://latex.codecogs.com/gif.latex?\\dot&space;y&space;=&space;".concat(lin1.f.latex()[1].replace("(", "\\(").replace(" ", "&space;"));
 
         var streamplotobj2 = new streamplotjs.Streamplot(oscillator, undefined, undefined, undefined, undefined, undefined, undefined, "canvas2");
         streamplotobj2.set_equilibrium_points_output("legend2");
         streamplotobj2.draw();
-        document.getElementById("ode2x").src = "https://latex.codecogs.com/gif.latex?\\dot&space;x&space;=&space;".concat(streamplotobj2.f._f.latex().replace("(", "\\(").replace(" ", "&space;"));
-        document.getElementById("ode2y").src = "https://latex.codecogs.com/gif.latex?\\dot&space;y&space;=&space;".concat(streamplotobj2.f._g.latex().replace("(", "\\(").replace(" ", "&space;"));
+        document.getElementById("ode2x").src = "https://latex.codecogs.com/gif.latex?\\dot&space;x&space;=&space;".concat(streamplotobj2.f.latex()[0].replace("(", "\\(").replace(" ", "&space;"));
+        document.getElementById("ode2y").src = "https://latex.codecogs.com/gif.latex?\\dot&space;y&space;=&space;".concat(streamplotobj2.f.latex()[1].replace("(", "\\(").replace(" ", "&space;"));
         var lin2 = new streamplotjs.Streamplot(oscillator.linearized(0, 0), undefined, undefined, undefined, undefined, undefined, undefined, "lcanvas2");
         lin2.draw();
-        document.getElementById("lin2x").src = "https://latex.codecogs.com/gif.latex?\\dot&space;x&space;=&space;".concat(lin2.f._f.latex().replace("(", "\\(").replace(" ", "&space;"));
-        document.getElementById("lin2y").src = "https://latex.codecogs.com/gif.latex?\\dot&space;y&space;=&space;".concat(lin2.f._g.latex().replace("(", "\\(").replace(" ", "&space;"));
+        document.getElementById("lin2x").src = "https://latex.codecogs.com/gif.latex?\\dot&space;x&space;=&space;".concat(lin2.f.latex()[0].replace("(", "\\(").replace(" ", "&space;"));
+        document.getElementById("lin2y").src = "https://latex.codecogs.com/gif.latex?\\dot&space;y&space;=&space;".concat(lin2.f.latex()[1].replace("(", "\\(").replace(" ", "&space;"));
 
         var streamplotobj3 = new streamplotjs.Streamplot(ahopf, undefined, undefined, undefined, undefined, undefined, undefined, "canvas3");
         streamplotobj3.set_equilibrium_points_output("legend3");
         streamplotobj3.draw();
-        document.getElementById("ode3x").src = "https://latex.codecogs.com/gif.latex?\\dot&space;x&space;=&space;".concat(streamplotobj3.f._f.latex().replace("(", "\\(").replace(" ", "&space;"));
-        document.getElementById("ode3y").src = "https://latex.codecogs.com/gif.latex?\\dot&space;y&space;=&space;".concat(streamplotobj3.f._g.latex().replace("(", "\\(").replace(" ", "&space;"));
+        document.getElementById("ode3x").src = "https://latex.codecogs.com/gif.latex?\\dot&space;x&space;=&space;".concat(streamplotobj3.f.latex()[0].replace("(", "\\(").replace(" ", "&space;"));
+        document.getElementById("ode3y").src = "https://latex.codecogs.com/gif.latex?\\dot&space;y&space;=&space;".concat(streamplotobj3.f.latex()[1].replace("(", "\\(").replace(" ", "&space;"));
         var lin3 = new streamplotjs.Streamplot(ahopf.linearized(0, 0), undefined, undefined, undefined, undefined, undefined, undefined, "lcanvas3");
         lin3.draw();
-        document.getElementById("lin3x").src = "https://latex.codecogs.com/gif.latex?\\dot&space;x&space;=&space;".concat(lin3.f._f.latex().replace("(", "\\(").replace(" ", "&space;"));
-        document.getElementById("lin3y").src = "https://latex.codecogs.com/gif.latex?\\dot&space;y&space;=&space;".concat(lin3.f._g.latex().replace("(", "\\(").replace(" ", "&space;"));
+        document.getElementById("lin3x").src = "https://latex.codecogs.com/gif.latex?\\dot&space;x&space;=&space;".concat(lin3.f.latex()[0].replace("(", "\\(").replace(" ", "&space;"));
+        document.getElementById("lin3y").src = "https://latex.codecogs.com/gif.latex?\\dot&space;y&space;=&space;".concat(lin3.f.latex()[1].replace("(", "\\(").replace(" ", "&space;"));
     </script>
 </body>
