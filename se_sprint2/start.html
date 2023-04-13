@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <link rel="stylesheet" href="ui/style.css">
+        <link rel="stylesheet" href="./ui/start_style.css">
+    </head>
+    <body>
+        <h1 id="greeting">Welcome to the Bug World!</h1>
+        <button id="StartButton">Start</button>
+        <script>
+            document.getElementById("StartButton").addEventListener("click",
+                                                                    function() { window.parent.document.getElementById("mainFrame").src = "options.html";});
+        </script>
+    </body>
+</html>

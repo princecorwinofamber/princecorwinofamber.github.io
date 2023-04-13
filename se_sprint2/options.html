@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Options</title>
+
+
+    <link rel="stylesheet" href="ui/style.css">
+    <link rel="stylesheet" href="./ui/options_style.css">
+</head>
+<body>
+<div class="files-container">
+    <form enctype="multipart/form-data" method="post">
+        <p>Please upload a world map file</p>
+        <p><input type="file" id="world_map"></p>
+    </form>
+    <form enctype="multipart/form-data" method="post">
+        <p>Please upload a bug assembler source code file #1</p>
+        <p><input type="file" id="bug_brain_1"></p>
+    </form>
+    <form enctype="multipart/form-data" method="post">
+        <p>Please upload a bug assembler source code file #2</p>
+        <p><input type="file" id="bug_brain_2"></p>
+    </form>
+    <form enctype="multipart/form-data" method="post">
+        <p>Please select the number of iterations </p>
+        <p><label for="number_of_iter"></label><input type="number" id="number_of_iter" value="100"></p>
+    </form>
+    <form enctype="multipart/form-data" method="post">
+        <p>Do you want to log the results of session? <label for="logging_bool"></label><input type="checkbox" id="logging_bool"></p>
+    </form>
+    <button id="NextButton">Next</button>
+</div>
+    <script>
+        
+    </script>
+    <script type="module" src="./src/logic/Script_options.js"></script>
+</body>
+</html>

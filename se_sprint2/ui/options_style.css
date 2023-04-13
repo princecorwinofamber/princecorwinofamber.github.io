@@ -1,0 +1,13 @@
+.files-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+#NextButton {
+    display: block;
+    margin: 50px auto auto;
+    font-size: 24px;
+    padding: 16px;
+}
