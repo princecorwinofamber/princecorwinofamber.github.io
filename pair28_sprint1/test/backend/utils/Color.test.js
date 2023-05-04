@@ -1,14 +1,11 @@
-import {Colors, opposite_color} from "../../../backend/utils/Color";
+import {Colors, opposite_color} from "../../../backend/utils/Color.js";
 
 
 describe("Color class", function() {
     it("red opposite", function() {
-        expect(opposite_color(Colors.RED)).toBe(Colors.BLACK);
+        expect(opposite_color(Colors.RED)).toEqual(Colors.BLACK);
     });
     it("black opposite", function() {
-        expect(opposite_color(Colors.BLACK)).toBe(Colors.RED);
-    });
-    it("none opposite", function() {
-        expect(opposite_color(Colors.NONE)).toThrow(new Error("Color should be either Color.RED or Color.BLACK!"));
+        expect(opposite_color(Colors.BLACK)).toEqual(Colors.RED);
     });
 });

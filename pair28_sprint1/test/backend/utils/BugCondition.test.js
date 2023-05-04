@@ -1,6 +1,6 @@
-import {BugCondition} from "../../../backend/utils/BugCondition";
-import {Condition} from "../../../backend/utils/Condition";
-import {has_value} from "../../../backend/utils/Maybe";
+import {BugCondition} from "../../../backend/utils/BugCondition.js";
+import {Condition} from "../../../backend/utils/Condition.js";
+import {has_value} from "../../../backend/utils/Maybe.js";
 
 describe("Bug condition class", function() {
     let bug_cond_not_marker = new BugCondition(Condition.FOOD);

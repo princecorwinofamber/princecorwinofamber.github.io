@@ -1,20 +1,27 @@
-import {MarkersSet} from "../../../backend/utils/MarkersSet";
+import {MarkersSet} from "../../../backend/utils/MarkersSet.js";
 
 describe("MarkersSet class", function() {
-    let markers_set = new MarkersSet();
     it("no marker set", function() {
-        expect(markers_set.any()).toBe(false);
+        let markers_set = new MarkersSet();
+        expect(markers_set.any()).toEqual(false);
     });
-    markers_set.set_marker(2);
     it("check marker which was set", function() {
-        expect(markers_set.has(2)).toBe(true);
+        let markers_set = new MarkersSet();
+        markers_set.set_marker(2);
+        expect(markers_set.has(2)).toEqual(true);
     });
-    markers_set.set_marker(3);
-    markers_set.clear_marker(2);
     it("check marker was cleared", function() {
-        expect(markers_set.has(2)).toBe(false);
+        let markers_set = new MarkersSet();
+        markers_set.set_marker(2);
+        markers_set.set_marker(3);
+        markers_set.clear_marker(2);
+        expect(markers_set.has(2)).toEqual(false);
     });
     it("check marker was set before clear", function() {
-        expect(markers_set.has(3)).toBe(true);
+        let markers_set = new MarkersSet();
+        markers_set.set_marker(2);
+        markers_set.set_marker(3);
+        markers_set.clear_marker(2);
+        expect(markers_set.has(3)).toEqual(true);
     });
 });
