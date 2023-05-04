@@ -30,7 +30,7 @@ export class WorldCell {
                 if (char > '0' && char <= '9') {
                     this.food = Number(char);
                 } else {
-                    throw new Error("Illegal char");
+                    throw new Error("Value out of legal");
                 }
         }
     }

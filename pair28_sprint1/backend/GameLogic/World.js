@@ -102,7 +102,7 @@ export class World {
 }
 
 function check_swarms(width, height, map) {
-    console.log(map);
+    // console.log(map);
     let black_swarms_amount = 0;
     let red_swarms_amount = 0;
     const queue = [];
@@ -150,41 +150,48 @@ function check_swarms(width, height, map) {
         }
     }
     if (black_swarms_amount === 0 || red_swarms_amount === 0) {
-        throw new Error("At least one swarm is missing");
+        throw new Error("One of the bug swarms is missing");
     }
     if (black_swarms_amount !== 1 || red_swarms_amount !== 1) {
-        throw new Error("Swarms should be linked.");
+        throw new Error("Swarm have to be linked");
     }
 }
 
 export function parse_world(data) {
-    console.log(data);
+    // console.log(data);
     const lines = data.split("\n");
+
+    if (lines.length < 3) {
+        throw new Error("World file must have at least 3 lines");
+    }
 
     const height = parseInt(lines[0].trim());
     const width = parseInt(lines[1].trim());
+    if (height <= 0 || width <= 0) {
+        throw new Error("Height and width must be greater than 0");
+    }
     let map = [];
     if (lines.length - 2 !== height) {
-        throw new Error("Bad dimensions");
+        throw new Error("The field does not correspond to the indicated dimensions");
     }
     for (let i = 0; i < height; i++) {
         let split_string = lines[i + 2].split(' ');
         if (split_string.length !== width) {
-            throw new Error("Bad dimensions");
+            throw new Error("The field does not correspond to the indicated dimensions");
         }
         let current_row = [];
         for (let j = 0; j < width; j++) {
             if (split_string[j].length !== 1) {
-                throw new Error("Illegal char");
+                throw new Error("Value out of legal");
             }
             current_row.push(new WorldCell(split_string[j][0]));
             if (((i === 0) || (i === height - 1) || (j === 0) || (j === width - 1)) && split_string[j][0] !== '#') {
-                throw new Error("Outer border is missing");
+                throw new Error("There is no outer border");
             }
         }
         map.push(current_row);
     }
-    // check_swarms(width, height, map);
+    check_swarms(width, height, map);
 
     return new World(width, height, map);
 }
