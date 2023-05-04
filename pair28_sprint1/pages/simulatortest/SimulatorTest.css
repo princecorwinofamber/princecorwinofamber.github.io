@@ -1,0 +1,26 @@
+.start-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+    background-image: url(../../resources/Ants.jpg);
+    background-size: cover;
+    background-position: bottom center;
+}
+
+.start-page > h1 {
+    font-size: 56px;
+    font-weight: 500;
+    text-shadow: 0 0 2px #FFFFFF;
+    letter-spacing: 1px;
+}
+
+.start-page > .button {
+    width: 200px;
+    height: 60px;
+
+    font-size: 40px;
+}
+

@@ -1,0 +1,66 @@
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+div {
+    text-align: left;
+}
+
+
+.block {
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: #e7e7e7;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.block2 {
+    display: inline-block;
+    width: 49%;
+    border: none;
+    background-color: #e7e7e7;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.block3 {
+    display: inline-block;
+    width: 20%;
+    border: none;
+    background-color: #e7e7e7;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
+
+.middle {
+    text-align: center;
+}
+
+.separation {
+    line-height: 4em;
+}
+
+.background {
+    background-image: url("Ants.jpg");
+}
+
+h1 {
+    font-size: 3.5em;
+}
